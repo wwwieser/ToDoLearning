@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToDoItem } from 'src/app/shared/models/to-do-item';
+import { APIMockService } from 'src/app/shared/services/apimock.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  list: ToDoItem[];
+
+  constructor(private apiService: APIMockService) {
+    this.apiService = apiService;
+   }
 
   ngOnInit() {
+    this.list = this.apiService.getListItems();
   }
 
 }

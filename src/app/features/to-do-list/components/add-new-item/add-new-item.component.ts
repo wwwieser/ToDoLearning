@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToDoItem } from 'src/app/shared/models/to-do-item';
+import { APIMockService } from 'src/app/shared/services/apimock.service';
 
 @Component({
   selector: 'app-add-new-item',
@@ -9,7 +11,9 @@ export class AddNewItemComponent {
 
   private newItemMessage: string;
 
-  constructor() { }
+  constructor(private apiService: APIMockService) {
+    this.apiService = apiService;
+  }
 
   update(value: string) {
     this.newItemMessage = value;
@@ -17,6 +21,7 @@ export class AddNewItemComponent {
 
   submit() {
     // Pass newItemMessage to API Service layer
+    this.apiService.addListItem(new ToDoItem(this.newItemMessage));
   }
 
 }

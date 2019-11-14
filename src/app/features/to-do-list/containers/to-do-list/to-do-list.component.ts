@@ -11,11 +11,8 @@ import { AddNewItemComponent } from '../../components/add-new-item/add-new-item.
     AddNewItemComponent
   ]
 })
-export class ToDoListComponent implements OnInit {
+export class ToDoListComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

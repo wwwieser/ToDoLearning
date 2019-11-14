@@ -1,2 +1,2 @@
-<app-list></app-list>
+<app-list [items]="items$ | async"> {{ value | async }}</app-list>
 <app-add-new-item></app-add-new-item>

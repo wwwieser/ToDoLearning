@@ -10,7 +10,8 @@ import { PipeButtonComponent } from './components/pipe-button/pipe-button.compon
   id: 'to-do-list',
   declarations: [ListComponent, AddNewItemComponent, ToDoListComponent, PipeButtonComponent],
   imports: [
-    CommonModule
+    CommonModule,
+
   ],
   exports: [ToDoListComponent, PipeButtonComponent]
 })

@@ -11,8 +11,11 @@ export class AddNewItemComponent {
 
   private newItemMessage: string;
 
+  //NOTE: private === implicit property generation
+  //TODO: No apiService except in container
+
+  //TODO: Reactive forms
   constructor(private apiService: APIMockService) {
-    this.apiService = apiService;
   }
 
   update(value: string) {
